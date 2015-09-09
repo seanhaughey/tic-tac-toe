@@ -1,0 +1,85 @@
+/** {
+	margin: 10px;
+}
+*/#box1 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 5px 5px 0px;
+	border-color: black;
+/*	background-color: red;
+*/	height: 200px;
+	max-width: 100%;
+}
+#box2 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 5px 0px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;
+}
+#box3 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 5px 5px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box4 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 5px 5px 0px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box5 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 5px 0px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box6 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 5px 5px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box7 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 5px 0px 0px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box8 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
+#box9 {
+	padding: 0px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 0px 5px;
+	border-color: black;
+	height: 200px;
+	max-width: 100%;	
+}
