@@ -1,6 +1,19 @@
+h1 {
+	text-align: center;
+}
+#newGame {
+	height: 10%;
+	background-color: aqua;
+}
+#spacer {
+	height: 10%;
+}
 .square {
-	max-width: 100%;
+/*	width: 75px;
+*/	width: 80%;
 	height: 50%;
+	background-color: white;
+	border-width: 0px;
 }
 .colPos {
 	height: 20%;
@@ -13,7 +26,8 @@
 	border-color: black;
 /*	background-color: red;
 */	height: 200px;
-	max-width: 100%;
+/*	width: 100%;
+*/	max-width: 100%;
 }
 #box2 {
 	padding: 0px;
