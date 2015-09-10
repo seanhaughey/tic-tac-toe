@@ -27,19 +27,21 @@ $(function() {
 			var boardPlaceId = $(this).attr('id');
 			boardPlace = $("#" + boardPlaceId);
 
-			if ((boardPlace.html === "X") || (boardPlace.html === "O")) 
-			{
-			return;
-			}
+			if ($(this).hasClass("deny")) {
+        	alert("I don't think so!")
+        	return;
+        }
 			else if (playerState == true) {
 				(boardPlace.html("X"));
 				playerState = false;
 				board[boardPlaceId] = "X";
+				boardPlace.addClass("deny");
 				}
 			else if (playerState == false){
 				(boardPlace.html("O"));
 				playerState = true;
 				board[boardPlaceId] = "O";
+				boardPlace.addClass("deny");
 			}
 			movesCounter ++;
 			if (((board.s1 === "X") && (board.s2 === "X") && (board.s3 === "X")) ||
@@ -77,6 +79,7 @@ $(function() {
 					};
 				movesCounter = 0;
 				playerState = true;
+				$(".square").removeClass("deny");
 			}
 			return;
 		})
@@ -87,18 +90,22 @@ $(function() {
 			var boardPlace;
 			var boardPlaceId = $(this).attr('id');
 			boardPlace = $("#" + boardPlaceId);
-			if ((boardPlace.html === "X") || (boardPlace.html === "O")) {
-			return;
-			}
+
+			if ($(this).hasClass("deny")) {
+        	alert("I don't think so!")
+        	return;
+        }
 			if (playerState == true) {
 				(boardPlace.html("O"));
 				playerState = false;
 				board[boardPlaceId] = "O";
+				boardPlace.addClass("deny");
 				}
 			else {
 				(boardPlace.html("X"));
 				playerState = true;
 				board[boardPlaceId] = "X";
+				boardPlace.addClass("deny");
 			}
 			movesCounter ++;
 			if (((board.s1 === "X") && (board.s2 === "X") && (board.s3 === "X")) ||
@@ -136,6 +143,7 @@ $(function() {
 					};
 				movesCounter = 0;
 				playerState = true;
+				$(".square").removeClass("deny");
 				// playerState = true;
 			}
 			return;	
