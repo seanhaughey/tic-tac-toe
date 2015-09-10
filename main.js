@@ -16,36 +16,42 @@ $(function() {
 	// 	playerOneState = "O";
 	// 	playerTwoState = "X";
 	// }
-	playerOneState = true;
+	
 	if (playerOne === "x") {
 		
-		if (playerOneState === true) {
-			$("button").on("click", function(){
-				($(this).html("X"));
-				playerOneState = false;
-				})
-			}	
-		else {
-			$("button").on("click", function(){
-				($(this).html("O"));
-				})
-				playerOneState = true;	
+		playerState = true;
+		$("button.square").on("click", function(){
+			if (($(this) == "X") || ($(this) == "O")) {
+				return false;
 			}
-		}
-	// else {
-	// 	playerOneState = true;
-	// 	if (playerOneState = true) {
-	// 		$("button").on("click", function(){
-	// 			($(this).html("O"));
-	// 			playerOneState = false;
-	// 		})
-	// 	}
-	// 	else {
-	// 		$("button").on("click", function(){
-	// 			($(this).html("X"));
-	// 		})
-	// 		playerOneState = true;
-	// 	}
-	// }		
+			else if (playerState == true) {
+				($(this).html("X"));
+				playerState = false;
+				}
+			else {
+				($(this).html("O"));
+				playerState = true;	
+			};
+		})
+	}	
+		
+	else {
+		playerState = true;
+		$("button.square").on("click", function(){
+			if (($(this) == "X") || ($(this) == "O")) {
+				return false;
+			}
+			else if (playerState == true) {
+				($(this).html("O"));
+				playerState = false;
+			}
+			else {
+				($(this).html("X"));
+				playerState = true;
+			}
+		})
 
-});
+	}
+	})		
+
+// });
