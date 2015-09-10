@@ -72,15 +72,18 @@ $(function() {
 			}
 			if (gotWinner === "yes") {
 					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("Choose this square")
+						$('#s' + i).html("Choose this square");
+						board['s' + i] = "";
 					};
 				movesCounter = 0;
-				return;
+				playerState = true;
 			}
+			return;
 		})
 	}
 	else {
 		$("button.square").on("click", function(){
+			var gotWinner;
 			var boardPlace;
 			var boardPlaceId = $(this).attr('id');
 			boardPlace = $("#" + boardPlaceId);
@@ -128,14 +131,18 @@ $(function() {
 			}
 			if (gotWinner === "yes") {
 					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("Choose this square")
+						$('#s' + i).html("Choose this square");
+						board['s' + i] = "";
 					};
 				movesCounter = 0;
-				return;
-			}	
+				playerState = true;
+				// playerState = true;
+			}
+			return;	
 		})
+	// return;
 	}
-	return;
+// return;
 })
 	
 			
