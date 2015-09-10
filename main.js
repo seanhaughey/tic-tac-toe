@@ -1,4 +1,5 @@
 $(function() {
+	var playerState = true;
 	// confirm("Shall we play a game?");
 	// confirm("How about tic-tac-toe?");
 	playerOne = prompt("Player 1 - Do you choose X's or O's?");
@@ -19,11 +20,13 @@ $(function() {
 	
 	if (playerOne === "x") {
 		
-		playerState = true;
+		
 		$("button.square").on("click", function(){
-			if (($(this) == "X") || ($(this) == "O")) {
-				return false;
+			if (($("button.square") === "X") || ($("button.square") === "O")) 
+			{
+			return;
 			}
+			
 			else if (playerState == true) {
 				($(this).html("X"));
 				playerState = false;
@@ -31,27 +34,22 @@ $(function() {
 			else {
 				($(this).html("O"));
 				playerState = true;	
-			};
-		})
-	}	
-		
+			}
+		})	
+		}
 	else {
-		playerState = true;
 		$("button.square").on("click", function(){
-			if (($(this) == "X") || ($(this) == "O")) {
-				return false;
+			if (($("button.square") === "X") || ($("button.square") === "O")) {
+			return;
 			}
 			else if (playerState == true) {
 				($(this).html("O"));
 				playerState = false;
-			}
+				}
 			else {
 				($(this).html("X"));
-				playerState = true;
+				playerState = true;	
 			}
-		})
-
-	}
-	})		
-
-// });
+		})	
+		}
+	})
