@@ -3,7 +3,7 @@ body {
 /*	background-repeat: no-repeat;
 */}
 header {
-	color: lightyellow;
+	color: springgreen;
 	font-family: 'Press Start 2P', cursive;
 }
 .score {
@@ -24,7 +24,14 @@ button:focus {
 
 .reset {
 	height: 10%;
-	background-color: orchid;
+	background-color: magenta;
+	border-radius: 20px;
+}
+#newGame {
+	margin: 2px 2px 2px 0px;
+}
+#newRound {
+	margin: 2px 0px 2px 2px;
 }
 #spacer {
 	height: 4%;
@@ -37,7 +44,7 @@ button:focus {
 	font-family: 'Press Start 2P', cursive;
 	font-weight: 10;
 	font-size: 100px;
-	color: white;
+	color: springgreen;
 }
 .colPos {
 	height: 20%;

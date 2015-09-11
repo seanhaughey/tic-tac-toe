@@ -1,4 +1,4 @@
-$(function() {
+	window.onload = function() {
 	var playerState = true;
 	var playerOneWin = 0;
 	var playerTwoWin = 0;
@@ -159,11 +159,9 @@ $(function() {
 			}
 			return;	
 		})
-
-	// return;
 	}
+}
 
-// return;
-})
+
 	
 			
