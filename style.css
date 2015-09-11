@@ -8,6 +8,10 @@ header {
 }
 .score {
 	margin: 20px 0px 0px 0px;
+	border: none;
+	text-align: left;
+}
+.winTotal {
 	text-align: left;
 }
 

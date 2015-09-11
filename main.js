@@ -1,5 +1,7 @@
 $(function() {
 	var playerState = true;
+	var playerOneWin = 0;
+	var playerTwoWin = 0;
 	var board = {
 		s1 : "", s2 : "", s3 : "", 
 		s4 : "", s5 : "", s6 : "", 
@@ -64,8 +66,11 @@ $(function() {
 				((board.s2 === "X") && (board.s5 === "X") && (board.s8 === "X")) ||
 				((board.s3 === "X") && (board.s6 === "X") && (board.s9 === "X")) ||
 				((board.s1 === "X") && (board.s5 === "X") && (board.s9 === "X")) ||
-				((board.s3 === "X") && (board.s5 === "X") && (board.s7 === "X"))) {
+				((board.s3 === "X") && (board.s5 === "X") && (board.s7 === "X"))
+				) {
 				gotWinner = "yes";
+				playerOneWin ++;
+				$("#playerOneScore").text(playerOneWin);
 				alert("X wins!!");
 			}
 				
@@ -79,6 +84,8 @@ $(function() {
 				((board.s3 === "O") && (board.s5 === "O") && (board.s7 === "O"))
 				) {
 				gotWinner = "yes";
+				playerTwoWin ++;
+				$("#playerTwoScore").text(playerTwoWin);
 				alert("O wins!!");
 			}
 			else if (movesCounter === 9){
@@ -124,6 +131,8 @@ $(function() {
 				((board.s1 === "X") && (board.s5 === "X") && (board.s9 === "X")) ||
 				((board.s3 === "X") && (board.s5 === "X") && (board.s7 === "X"))
 			) {
+				playerTwoWin ++;
+				$("#playerTwoScore").text(playerTwoWin);
 				alert("X wins!!");
 				gotWinner = "yes";
 			}
@@ -136,6 +145,8 @@ $(function() {
 				((board.s1 === "O") && (board.s5 === "O") && (board.s9 === "O")) ||
 				((board.s3 === "O") && (board.s5 === "O") && (board.s7 === "O"))
 				) {
+				playerOneWin ++;
+				$("#playerOneScore").text(playerOneWin);
 				alert("O wins!!");
 				gotWinner = "yes";
 			}
