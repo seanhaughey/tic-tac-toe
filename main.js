@@ -32,13 +32,13 @@ $(function() {
         	return;
         }
 			else if (playerState == true) {
-				(boardPlace.html("X"));
+				(boardPlace).html($("<img class='square' src='X.png'/>"));
 				playerState = false;
 				board[boardPlaceId] = "X";
 				boardPlace.addClass("deny");
 				}
 			else if (playerState == false){
-				(boardPlace.html("O"));
+				(boardPlace).html($("<img class='square' src='O.jpg'/>"));
 				playerState = true;
 				board[boardPlaceId] = "O";
 				boardPlace.addClass("deny");
