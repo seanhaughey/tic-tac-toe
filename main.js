@@ -1,21 +1,21 @@
-	window.onload = function() {
-	var playerState = true;
-	var playerOneWin = 0;
+	window.onload = function() {//Gets JS to load more slowly so background image populates before alerts
+	var playerState = true;//playerState will determine which turn it is
+	var playerOneWin = 0;//Counter for scoreboard
 	var playerTwoWin = 0;
-	var board = {
+	var board = {				//object for tracking pieces in squares
 		s1 : "", s2 : "", s3 : "", 
 		s4 : "", s5 : "", s6 : "", 
 		s7 : "", s8 : "", s9 : "",
 	};
-	var movesCounter = 0;
-	var boardReset = function() {
-		for (var i = 1; i <= 9; i++) {
+	var movesCounter = 0;	//to determine tie when 9 moves are completed
+	var boardReset = function() {	//resets board by switching text in box buttons back to empty string 
+		for (var i = 1; i <= 9; i++) { //and setting object values back to empty strings using an iterator to loop through all ids and keys
 			$('#s' + i).html("");
 			board['s' + i] = "";
 		};
 		movesCounter = 0;
-		playerState = true;
-		$(".square").removeClass("deny");
+		playerState = true; //so playerOne starts again
+		$(".square").removeClass("deny");//clears out class created to not allow same box clicked twice
 	}
 	confirm("Shall we play a game?");
 	confirm("How about Global Thermonuclear War?");
@@ -29,15 +29,15 @@
 	else {
 		playerTwo = "x";
 	};
-	$("#newGame").on("click", function() {
+	$("#newGame").on("click", function() {//reset board when clicking new game button
 		boardReset();
 	});
-	$("#newRound").on("click", function() {
+	$("#newRound").on("click", function() {//reload page when clicking new round
 		location.reload();
 	})
-	if (playerOne === "x") {
+	if (playerOne === "x") { 
 		$("button.square").on("click", function(){
-			var gotWinner;
+			var gotWinner;							//
 			var boardPlace;
 			var boardPlaceId = $(this).attr('id');
 			boardPlace = $("#" + boardPlaceId);
@@ -71,7 +71,9 @@
 				gotWinner = "yes";
 				playerOneWin ++;
 				$("#playerOneScore").text(playerOneWin);
+				$(".player1").css("background-color","red");
 				alert("X wins!!");
+				$(".player1").css("background-color","transparent");
 			}
 				
 			else if (((board.s1 === "O") && (board.s2 === "O") && (board.s3 === "O")) ||
@@ -86,7 +88,9 @@
 				gotWinner = "yes";
 				playerTwoWin ++;
 				$("#playerTwoScore").text(playerTwoWin);
+				$(".player2").css("background-color","red");
 				alert("O wins!!");
+				$(".player2").css("background-color","transparent");
 			}
 			else if (movesCounter === 9){
 				alert("It's a tie!!");
@@ -133,7 +137,9 @@
 			) {
 				playerTwoWin ++;
 				$("#playerTwoScore").text(playerTwoWin);
+				$(".player2").css("background-color","red");
 				alert("X wins!!");
+				$(".player2").css("background-color","transparent");
 				gotWinner = "yes";
 			}
 			else if (((board.s1 === "O") && (board.s2 === "O") && (board.s3 === "O")) ||
@@ -147,7 +153,9 @@
 				) {
 				playerOneWin ++;
 				$("#playerOneScore").text(playerOneWin);
+				$(".player1").css("background-color","red");
 				alert("O wins!!");
+				$(".player1").css("background-color","transparent");
 				gotWinner = "yes";
 			}
 			else if (movesCounter === 9){
