@@ -6,6 +6,10 @@ header {
 	color: lightyellow;
 	font-family: 'Press Start 2P', cursive;
 }
+.score {
+	margin: 20px 0px 0px 0px;
+	text-align: left;
+}
 
 h1 {
 	text-align: center;
