@@ -95,14 +95,14 @@ $(function() {
         	alert("I don't think so!")
         	return;
         }
-			if (playerState == true) {
-				(boardPlace).html($("<img class='square' src='O.jpg'/>"));
+			else if (playerState == true) {
+				(boardPlace).html("O");
 				playerState = false;
 				board[boardPlaceId] = "O";
 				boardPlace.addClass("deny");
 				}
-			else {
-				(boardPlace).html($("<img class='square' src='X.jpg'/>"));
+			else if (playerState == false){
+				(boardPlace).html("X");
 				playerState = true;
 				board[boardPlaceId] = "X";
 				boardPlace.addClass("deny");
@@ -132,7 +132,7 @@ $(function() {
 				alert("O wins!!");
 				gotWinner = "yes";
 			}
-			else if (movesCounter > 9){
+			else if (movesCounter === 9){
 				alert("It's a tie!!");
 				gotWinner = "yes";
 			}
