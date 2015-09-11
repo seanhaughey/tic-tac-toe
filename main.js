@@ -6,8 +6,8 @@ $(function() {
 		s7 : "", s8 : "", s9 : "",
 	};
 	var movesCounter = 0;
-	// confirm("Shall we play a game?");
-	// confirm("How about tic-tac-toe?");
+	confirm("Shall we play a game?");
+	confirm("How about Global Thermonuclear War?");
 	playerOne = prompt("Player 1 - Do you choose X's or O's?");
 	while ((playerOne !== "x") && (playerOne !== "X") && (playerOne !== "o") && (playerOne !== "O")) {
 		playerOne = prompt ("You must choose X or O!");
@@ -32,13 +32,13 @@ $(function() {
         	return;
         }
 			else if (playerState == true) {
-				(boardPlace).html($("<img class='square' src='X.png'/>"));
+				(boardPlace).html("X");
 				playerState = false;
 				board[boardPlaceId] = "X";
 				boardPlace.addClass("deny");
 				}
 			else if (playerState == false){
-				(boardPlace).html($("<img class='square' src='O.jpg'/>"));
+				(boardPlace).html("O");
 				playerState = true;
 				board[boardPlaceId] = "O";
 				boardPlace.addClass("deny");
@@ -74,7 +74,7 @@ $(function() {
 			}
 			if (gotWinner === "yes") {
 					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("Choose this square");
+						$('#s' + i).html("");
 						board['s' + i] = "";
 					};
 				movesCounter = 0;
@@ -96,13 +96,13 @@ $(function() {
         	return;
         }
 			if (playerState == true) {
-				(boardPlace.html("O"));
+				(boardPlace).html($("<img class='square' src='O.jpg'/>"));
 				playerState = false;
 				board[boardPlaceId] = "O";
 				boardPlace.addClass("deny");
 				}
 			else {
-				(boardPlace.html("X"));
+				(boardPlace).html($("<img class='square' src='X.jpg'/>"));
 				playerState = true;
 				board[boardPlaceId] = "X";
 				boardPlace.addClass("deny");
@@ -138,7 +138,7 @@ $(function() {
 			}
 			if (gotWinner === "yes") {
 					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("Choose this square");
+						$('#s' + i).html("");
 						board['s' + i] = "";
 					};
 				movesCounter = 0;
