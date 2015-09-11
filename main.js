@@ -6,6 +6,15 @@ $(function() {
 		s7 : "", s8 : "", s9 : "",
 	};
 	var movesCounter = 0;
+	var boardReset = function() {
+		for (var i = 1; i <= 9; i++) {
+			$('#s' + i).html("");
+			board['s' + i] = "";
+		};
+		movesCounter = 0;
+		playerState = true;
+		$(".square").removeClass("deny");
+	}
 	confirm("Shall we play a game?");
 	confirm("How about Global Thermonuclear War?");
 	playerOne = prompt("Player 1 - Do you choose X's or O's?");
@@ -18,9 +27,13 @@ $(function() {
 	else {
 		playerTwo = "x";
 	};
+	$("#newGame").on("click", function() {
+		boardReset();
+	});
+	$("#newRound").on("click", function() {
+		location.reload();
+	})
 	if (playerOne === "x") {
-		
-		
 		$("button.square").on("click", function(){
 			var gotWinner;
 			var boardPlace;
@@ -73,13 +86,7 @@ $(function() {
 				gotWinner = "yes";
 			}
 			if (gotWinner === "yes") {
-					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("");
-						board['s' + i] = "";
-					};
-				movesCounter = 0;
-				playerState = true;
-				$(".square").removeClass("deny");
+				boardReset();
 			}
 			return;
 		})
@@ -137,19 +144,14 @@ $(function() {
 				gotWinner = "yes";
 			}
 			if (gotWinner === "yes") {
-					for (var i = 1; i <= 9; i++) {
-						$('#s' + i).html("");
-						board['s' + i] = "";
-					};
-				movesCounter = 0;
-				playerState = true;
-				$(".square").removeClass("deny");
-				// playerState = true;
+				boardReset();
 			}
 			return;	
 		})
+
 	// return;
 	}
+
 // return;
 })
 	

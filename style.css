@@ -14,7 +14,7 @@ button:focus {
 	outline:0;
 }
 
-#newGame {
+.reset {
 	height: 10%;
 	background-color: orchid;
 }
@@ -27,6 +27,7 @@ button:focus {
 	background-color: transparent;
 	border-width: 0px;
 	font-family: 'Press Start 2P', cursive;
+	font-weight: 10;
 	font-size: 100px;
 	color: white;
 }
